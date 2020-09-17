@@ -36,7 +36,7 @@ CXX=clang++
 CXXFLAGS=-c -g -Wall -Wextra -std=c++17
 
 # Module External
-INCLUDE_MODULE_XXX= 
+INCLUDE_MODULE_XXX=
 LINK_MODULE_XXX=
 
 # Module YYY
@@ -78,3 +78,6 @@ clean: CLEAN_BEFORE_BUILD
 CLEAN_BEFORE_BUILD:
 	@rm -f $(LOGFILE)
 	@rm -f $(PROCESS_NAME)
+	@if [ ! -d "$(OBJECTS_DIR)" ]; then
+	@	mkdir $(OBJECTS_DIR)
+	@fi
