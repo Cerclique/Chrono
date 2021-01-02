@@ -9,10 +9,8 @@ int main(int argc, char** argv) {
 
   Chronometer timer;
 
-  for(uint32_t i = 0; i < 5; ++i) {
-    std::this_thread::sleep_for(Chronometer::seconds(1));
-  }
-
+  std::this_thread::sleep_for(Chronometer::seconds(5));
+  
   std::cout << timer.get<Chronometer::nanoseconds>() << " nanoseconds"<< std::endl;
   std::cout << timer.get<Chronometer::microseconds>() << " microseconds"<< std::endl;
   std::cout << timer.get<Chronometer::milliseconds>() << " milliseconds"<< std::endl;
