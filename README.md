@@ -10,7 +10,7 @@ Single header file containing chronometer tool to help compute execution time in
 - Build using `make`.
 - Run the executable `ChronoSample`.
 
-The sample declare a `Chronometer` object, sleep for 5 seconds and print execution time in different time precision.
+The sample declare a `Chronometer` object, sleep from 1 to 5 seconds and print execution time in different time precision for each run.
 
 ## API
 
@@ -21,7 +21,7 @@ Since no argument are needed, only the default constructor is available.
 At creation, the origin time point is set to current time.
 
 ```c++
-Chronometer timer;
+Dissoni::Chronometer timer;
 ```
 
 ### Reset the timer
@@ -35,14 +35,14 @@ timer.reset();
 ### Get elapsed time
 
 Different time unit are available :
-- `Chronometer::nanoseconds`
-- `Chronometer::microseconds`
-- `Chronometer::milliseconds`
-- `Chronometer::seconds`
+- `Dissoni::Chronometer::nanoseconds`
+- `Dissoni::Chronometer::microseconds`
+- `Dissoni::Chronometer::milliseconds`
+- `Dissoni::Chronometer::seconds`
 
 Thus, to get time from last timer reset :
 
 ```c++
-uint64_t elapsedMilliconds = timer.get<Chronometer::milliseconds>(); /**Get time in milliseconds **/
-auto elapsedSeconds = timer.get<Chronometer::seconds>(); /** Get time in seconds **/
+const uint64_t elapsedMilliseconds = timer.get<Dissoni::Chronometer::milliseconds>(); /**Get time in milliseconds **/
+const auto elapsedSeconds = timer.get<Dissoni::Chronometer::seconds>(); /** Get time in seconds **/
 ```
