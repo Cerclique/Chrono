@@ -14,10 +14,10 @@ TARGET_NAME = ChronoSample
 SRC_EXTENSION = cpp
 
 # Compiler
-CXX = clang++
+CXX = g++
 
 # Compilation flags (-c for .o object generation)
-CXXFLAGS = -c
+CXXFLAGS = -c -Wall -Wextra -Wpedantic -std=c++17
 
 # Module XXX
 INCLUDE_DIR_MODULE_XXX =
@@ -31,7 +31,7 @@ LIB_MODULE_YYY =
 
 # Include and link/lib flags composed of INCLUDE_DIR (default) and modules defined previously
 INCLUDE_FLAGS = -I $(INCLUDE_DIR) # -I $(INCLUDE_DIR_MODULE_XXX)
-LDFLAGS = # -L $(LIB_DIR_MODULE_XXX) $(LIB_MODULE_XXX)
+LDFLAGS = -lfmt # -L $(LIB_DIR_MODULE_XXX) $(LIB_MODULE_XXX)
 
 # Logfile containing compilation log
 LOGFILE = build.log
